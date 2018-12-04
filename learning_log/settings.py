@@ -133,7 +133,8 @@ if os.getcwd() == '/app':
     }
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PORTO','https')
 
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['bowenddd.herokuapp.com']
+    DEBUG = False
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
