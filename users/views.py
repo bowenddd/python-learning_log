@@ -9,6 +9,7 @@ def logout_view(request):
     return HttpResponseRedirect(reverse('learning_logs:index'))
 
 def register(request):
+    error = " "
     if request.method != 'POST':
         form = UserCreationForm()
     else:
@@ -19,6 +20,7 @@ def register(request):
             authenticate_user = authenticate(username = new_user.username,password = request.POST['password1'])
             login(request,authenticate_user)
             return HttpResponseRedirect(reverse('learning_logs:index'))
-
-    context = {'form':form}
+        else:
+            error = "注册失败，请重新检查格式。"
+    context = {'form':form,'error':error}
     return render(request,'users/register.html',context)
