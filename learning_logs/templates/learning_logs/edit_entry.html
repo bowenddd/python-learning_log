@@ -9,8 +9,10 @@
 <form action="{% url 'learning_logs:edit_entry' topic.id%}" method="post" class="form">
     {% csrf_token%}
     {% bootstrap_form form %}
-    {%buttons%}
-        <button name = "submit">保存更改</button>
-    {%endbuttons%}
+    <div class="form-group">
+            <div>
+                <button type="submit" class="btn btn-primary">编辑内容</button>
+            </div>
+        </div>
 </form>
 {%endblock content%}

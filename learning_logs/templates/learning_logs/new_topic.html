@@ -8,9 +8,11 @@
 <form action = "{% url 'learning_logs:new_topic'%} " method="post" class="form">
     {%csrf_token%}
     {% bootstrap_form form %}
-    {%buttons%}
-        <button name = "submit">新增主题</button>
-    {%endbuttons%}
+    <div class="form-group">
+            <div>
+                <button type="submit" class="btn btn-primary">新增主题</button>
+            </div>
+        </div>
 
 </form>
 {%endblock content%}
